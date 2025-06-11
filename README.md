@@ -29,3 +29,4 @@ A Logos é uma desenvolvedora web focada em criar experiências digitais eficien
 Para dúvidas ou sugestões, entre em contato:
 
   ✉️ mickaeldutra99@gmail.com
+  ✉️ mitchel.mathias.dev@gmail.com
