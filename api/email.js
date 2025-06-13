@@ -17,9 +17,9 @@ export default async function handler(req, res) {
             });
 
             await transporter.sendMail({
-                from: '"Site Dachery" <mitchelmathias2904@gmail.com>',
+                from: '"Site Logos" <mitchelmathias2904@gmail.com>',
                 to: 'mitchel.mathias.dev@gmail.com',
-                subject: 'Novo Contato',
+                subject: 'Contratando serviço de criação de sites',
                 text: `Nome: ${req.body.nome}\nEmail: ${req.body.email}\nEmpresa: ${req.body.suaEmpresa}\nMensagem: ${req.body.mensagem}`
             });
 
