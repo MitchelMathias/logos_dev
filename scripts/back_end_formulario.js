@@ -1,6 +1,7 @@
 document.getElementById("formulario").addEventListener("submit", async (e) => {
     e.preventDefault();
     
+    alert('Enviando email');
     const response = await fetch("/email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -11,7 +12,6 @@ document.getElementById("formulario").addEventListener("submit", async (e) => {
             mensagem: document.getElementById("mensagem").value
         })
     });
-    
-    const result = await response.json();
-    alert(result.message);
+    const resposta_json = await response.json()
+    alert(resposta_json.message);
 });

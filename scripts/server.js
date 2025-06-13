@@ -8,14 +8,14 @@ app.use(express.json());
 
 app.post('/email', async (req, res) => {
     try {
-        const {nome,email,tel,mensagem} = req.body;
+        const {nome,email,suaEmpresa,mensagem} = req.body;
+        console.log(req.body);
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth:{
                 user:'mitchelmathias2904@gmail.com',
                 pass:'xpfjrspogjajryci'
             }
-
         })
 
         await transporter.sendMail({

@@ -4,7 +4,7 @@
   "description": "Site institucional da Logos, empresa especializada no desenvolvimento de soluções web sob medida.",
   "main": "index.js",
   "scripts": {
-  "start": "node scripts/server.js",
+    "start": "node scripts/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/MitchelMathias/logos_dev/issues"
   },
-  "homepage": "https://github.com/MitchelMathias/logos_dev#readme"
+  "homepage": "https://github.com/MitchelMathias/logos_dev#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.3"
+  }
 }
