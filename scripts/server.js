@@ -1,0 +1,37 @@
+const nodemailer = require('nodemailer');
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.post('/email', async (req, res) => {
+    try {
+        const {nome,email,tel,mensagem} = req.body;
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth:{
+                user:'mitchelmathias2904@gmail.com',
+                pass:'xpfjrspogjajryci'
+            }
+
+        })
+
+        await transporter.sendMail({
+            from: '"Dachery" <mitchelmathias2904@gmail.com>',
+            to: 'mitchel.mathias.dev@gmail.com',
+            subject: 'Contato do site',
+            text: `Nome: ${nome}\nEmail: ${email}\nTelefone: ${tel}\nMensagem: ${mensagem}`
+        })
+        res.json({message: 'Email enviado com Sucesso'})
+        
+    }
+    catch (e) {
+        console.error(e);
+        res.status(500).json({ error: e.message });
+    }
+});
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));

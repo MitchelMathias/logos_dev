@@ -1,7 +1,7 @@
 document.getElementById("formulario").addEventListener("submit", async (e) => {
     e.preventDefault();
     
-    const response = await fetch("/api/email", {
+    const response = await fetch("/email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
