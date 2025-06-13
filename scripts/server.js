@@ -30,7 +30,7 @@ app.post('/email', async (req, res) => {
             from: '"Logos" <mitchelmathias2904@gmail.com>',
             to: 'mitchel.mathias.dev@gmail.com',
             subject: 'Contato do site',
-            text: `Nome: ${nome}\nEmail: ${email}\nTelefone: ${tel}\nMensagem: ${mensagem}`
+            text: `Nome: ${nome}\nEmail: ${email}\nTelefone: ${suaEmpresa}\nMensagem: ${mensagem}`
         })
         res.json({message: 'Email enviado com Sucesso'})
         
