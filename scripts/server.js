@@ -6,6 +6,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, '..')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
+
 app.post('/email', async (req, res) => {
     try {
         const {nome,email,suaEmpresa,mensagem} = req.body;
