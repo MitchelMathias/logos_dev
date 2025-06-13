@@ -1,6 +1,6 @@
-const nodemailer = require('nodemailer');
 const express = require('express');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 const app = express();
 app.use(cors());
@@ -19,7 +19,7 @@ app.post('/email', async (req, res) => {
         })
 
         await transporter.sendMail({
-            from: '"Dachery" <mitchelmathias2904@gmail.com>',
+            from: '"Logos" <mitchelmathias2904@gmail.com>',
             to: 'mitchel.mathias.dev@gmail.com',
             subject: 'Contato do site',
             text: `Nome: ${nome}\nEmail: ${email}\nTelefone: ${tel}\nMensagem: ${mensagem}`
